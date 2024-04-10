@@ -2,7 +2,7 @@
 // @Title JustMoney Bridged Token
 // @Author Team JustMoney
 
-pragma solidity >=0.8.17;
+pragma solidity 0.8.6;
 
 import "./ITRC20.sol";
 import "./BridgeOracle.sol";
@@ -416,12 +416,12 @@ contract Token is BridgeOracle, ITRC20, ReentrancyGuard {
         return ITRC20(_token).transfer(recipient, bal);
     }
     
-    function withdrawTRC10token(trcToken _tokenID, address payable recipient) external onlyOwner notZeroAddress(recipient) {
-        uint256 bal = address(this).tokenBalance(_tokenID);
-        require(bal > 0, Errors.NOTHING_TO_WITHDRAW);
+    // function withdrawTRC10token(trcToken _tokenID, address payable recipient) external onlyOwner notZeroAddress(recipient) {
+    //     uint256 bal = address(this).tokenBalance(_tokenID);
+    //     require(bal > 0, Errors.NOTHING_TO_WITHDRAW);
 
-        recipient.transferToken(bal, _tokenID);
-    }
+    //     recipient.transferToken(bal, _tokenID);
+    // }
 
     event TokenCreated(address indexed creator, uint256 supply, uint256 minted);
     event BridgeMint(address indexed by, address indexed to, uint256 value);

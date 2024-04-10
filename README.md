@@ -18,3 +18,9 @@ tronbox compile
 ```
 source .env && tronbox migrate --network <NETWORK>
 ```
+
+### Deployments:
+```
+Mainnet: TMGthL6Co2B9wgSyiSC5vdReEnbDafF72p
+Shasta (tesnet): TVzyE8MGhdBV4vE5Q5VpFTddPNspYVGj98
+```

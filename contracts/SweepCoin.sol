@@ -11,7 +11,6 @@ contract SweepCoin is TRC20Detailed, Ownable {
     event TokenBurned(address indexed from, uint256 amount);
     event TokenMinted(address indexed to, uint256 amount);
     event BridgeChanged(address indexed bridge);
-    event FastMultisigChanged(address indexed fastMultisig);
 
     /* ========== Errors ========== */
     error NotBridge();
@@ -41,9 +40,11 @@ contract SweepCoin is TRC20Detailed, Ownable {
     /* ========== Actions ========== */
     function mint(address account, uint256 amount) external onlyBridge {
         _mint(account, amount);
+        emit TokenMinted(account, amount);
     }
 
     function burn(address account, uint256 amount) external onlyBridge {
         _burn(account, amount);
+        emit TokenBurned(account, amount);
     }
 }
