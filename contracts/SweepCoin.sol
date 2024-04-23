@@ -30,7 +30,7 @@ contract SweepCoin is TRC20Detailed, Ownable {
 
     /* ========== Settings ========== */
     /**
-     * @dev To pause/unpause minting, set the bridge to address(0)
+     * @dev To pause/unpause minting, set the bridge to address(0).
      */
     function setBridge(address _bridge) public onlyOwner {
         bridge = _bridge;
